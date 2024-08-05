@@ -1,5 +1,6 @@
 import { MdOutlineEmail } from "react-icons/md";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { IoLocationSharp } from "react-icons/io5";
 
 const profileUser = {
 	profile: {
@@ -13,7 +14,8 @@ const profileUser = {
 const personalInfo = [
 	{
 		title: "Email",
-		content: "nadhiradhitya@gmail",
+		content: "nadhiradhitya@gmail.com",
+		links: "",
 		icons: MdOutlineEmail,
 	},
 	{
@@ -23,19 +25,10 @@ const personalInfo = [
 		icons: FaGithub,
 	},
 	{
-		title: "LinkedIn",
-		content: "https://github.com/Nadhiradhit",
-		icons: FaLinkedin,
-	},
-	{
-		title: "Github",
-		content: "https://github.com/Nadhiradhit",
-		icons: FaGithub,
-	},
-	{
-		title: "Github",
-		content: "https://github.com/Nadhiradhit",
-		icons: FaGithub,
+		title: "Location",
+		content: "Bogor, West Java",
+		links: "https://goo.gl/maps/1DGM5WrWnATgkSN9A",
+		icons: IoLocationSharp,
 	},
 ];
 
