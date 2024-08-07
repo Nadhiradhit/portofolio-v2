@@ -64,10 +64,14 @@ export function ProfileSocialMedia() {
 				<Link href={"#"} className="bg-[#2d2e30] rounded-full p-2">
 					<FaGithub size={25} className="text-[#5389cf]" />
 				</Link>
-				<Link href={"#"} className="bg-[#2d2e30] rounded-full p-2">
+				<Link
+					href={"https://www.linkedin.com/in/nadhiradhitt/"}
+					className="bg-[#2d2e30] rounded-full p-2">
 					<FaLinkedin size={25} className="text-[#5389cf]" />
 				</Link>
-				<Link href={"#"} className="bg-[#2d2e30] rounded-full p-2">
+				<Link
+					href={"https://www.instagram.com/nadhiradhitt/"}
+					className="bg-[#2d2e30] rounded-full p-2">
 					<FaInstagram size={25} className="text-[#5389cf]" />
 				</Link>
 			</div>
