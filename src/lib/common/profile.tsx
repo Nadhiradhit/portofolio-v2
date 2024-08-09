@@ -1,6 +1,7 @@
 import { MdOutlineEmail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
+import { describe } from "node:test";
 
 const profileUser = {
 	profile: {
@@ -32,4 +33,11 @@ const personalInfo = [
 	},
 ];
 
-export { profileUser, personalInfo };
+const personalTask = [
+	{
+		title: "Frontend Developer",
+		description: "",
+	},
+];
+
+export { profileUser, personalInfo, personalTask };
