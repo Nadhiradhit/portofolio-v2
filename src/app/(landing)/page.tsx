@@ -1,11 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Navbar from "@/components/navigation/navbar";
-import Divider from "@/components/divider/divider-line";
-import { MdOutlineWebAsset } from "react-icons/md";
 import { personalTask } from "@/lib/common/profile";
-import Image from "next/image";
-import paperImage from "@/public/assets/paper.jpg";
+import { navigationLinks } from "@/lib/common/navigation";
 
 export default function page() {
 	return (
@@ -16,7 +13,12 @@ export default function page() {
 			<div className="text-white bg-[#2d2e30]/50 w-full rounded-lg h-screen relative">
 				<div className="flex justify-end gap-4">
 					<div className="w-auto h-12 bg-[#2d2e30] flex gap-24 items-center justify-center px-16 rounded-bl-xl rounded-tr-xl">
-						<Link
+						{navigationLinks.map((item, index) => (
+							<div key={index}>
+								<Link href={item.href}>{item.name}</Link>
+							</div>
+						))}
+						{/* <Link
 							href="https://github.com/nadhiradhitt"
 							className="hover:text-[#5389cf]">
 							<p>Home</p>
@@ -35,12 +37,12 @@ export default function page() {
 							href="https://github.com/nadhiradhitt"
 							className="hover:text-[#5389cf]">
 							<p>Portofolio</p>
-						</Link>
+						</Link> */}
 					</div>
 				</div>
 				<div className="w-full p-10 absolute top-0">
 					<div>
-						<p className="text-[1.5rem] font-semibold text-start">About Me</p>
+						<h2 className="text-[1.5rem] font-semibold text-start">About Me</h2>
 						<div className="w-14 h-1 bg-[#5389cf] rounded-md"></div>
 						<div className="py-5 text-sm">
 							<p className="text-justify">
@@ -58,29 +60,37 @@ export default function page() {
 						</div>
 					</div>
 					<div>
-						<p className="text-[1.5rem] font-semibold text-start">
+						<h2 className="text-[1.5rem] font-semibold text-start">
 							What I&apos;m Doing
-						</p>
-						<div className="h-screen bg-cover bg-center bg-no-repeat">
-							<div className="grid grid-cols-2 gap-2 p-1.5 ">
-								{personalTask.map((item, index) => {
-									const IconType = item.icons;
-									return (
-										<div
-											className="w-full h-32 bg-[#2d2e30] rounded-md flex items-center justify-center gap-5 p-5"
-											key={index}>
-											<IconType size={65} className=" text-[#5389cf]" />
-											<div className="w-3/4">
-												<p className="text-[1.2rem] font-semibold text-justify">
-													{item.title}
-												</p>
-												<p className="text-sm font-light">{item.description}</p>
-											</div>
+						</h2>
+						<div className="w-14 h-1 bg-[#5389cf] rounded-md"></div>
+						<div className="grid grid-cols-2 gap-2 p-1.5 ">
+							{personalTask.map((item, index) => {
+								const IconType = item.icons;
+								return (
+									<div
+										className="w-full h-32 bg-[#2d2e30] rounded-md flex items-center justify-center gap-5 p-5"
+										key={index}>
+										<IconType size={65} className=" text-[#5389cf]" />
+										<div className="w-3/4">
+											<p className="text-[1.2rem] font-semibold text-justify">
+												{item.title}
+											</p>
+											<p className="text-sm font-light">{item.description}</p>
 										</div>
-									);
-								})}
-							</div>
+									</div>
+								);
+							})}
 						</div>
+					</div>
+					<div>
+						<h2 className="text-[1.5rem] font-semibold text-start">Project</h2>
+						<div className="w-14 h-1 bg-[#5389cf] rounded-md"></div>
+						<div className="flex justify-between text-xs">
+							<p>This is my project</p>
+							<Link href={"/project"}>More Project</Link>
+						</div>
+						<div className="grid grid-cols-3"></div>
 					</div>
 				</div>
 			</div>
