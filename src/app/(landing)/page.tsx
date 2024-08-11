@@ -12,7 +12,7 @@ export default function page() {
 			<div className="">
 				<Navbar />
 			</div>
-			<div className="text-white bg-[#2d2e30]/50 w-full rounded-lg h-screen relative">
+			<div className="text-white bg-[#2d2e30]/50 w-full min-h-[125vh] lg:min-h-[140vh] rounded-lg relative">
 				<div className="flex justify-end gap-4 z-10 relative">
 					<div className="w-auto h-12 bg-[#2d2e30] flex gap-24 items-center justify-center px-16 rounded-bl-xl rounded-tr-xl ">
 						{navigationLinks.map((item, index) => {
@@ -29,7 +29,9 @@ export default function page() {
 				</div>
 				<div className="w-full p-10 absolute top-0">
 					<div>
-						<h2 className="text-[1.5rem] font-semibold text-start">About Me</h2>
+						<h2 className="text-[1.5rem] font-semibold text-start pt-5">
+							About Me
+						</h2>
 						<div className="w-14 h-1 bg-[#5389cf] rounded-md"></div>
 						<div className="py-5 text-sm">
 							<p className="text-justify">
@@ -73,13 +75,46 @@ export default function page() {
 					<div>
 						<h2 className="text-[1.5rem] font-semibold text-start">Project</h2>
 						<div className="w-14 h-1 bg-[#5389cf] rounded-md"></div>
+						<div className="flex justify-between text-sm py-5">
+							<p>This is my project</p>
+							<Link href={"/project"} className="text-[#5389cf]">
+								More About My Project
+							</Link>
+						</div>
 						<div className="grid grid-cols-3 gap-4">
-							<div className="flex justify-between text-sm py-5">
-								<p>This is my project</p>
-								<Link href={"/project"} className="text-[#5389cf]">
-									More About My Project
-								</Link>
-							</div>
+							{projects.map((item, index) => {
+								return (
+									<div
+										className="w-full bg-[#2d2e30] rounded-xl p-3 flex flex-col justify-center hover:scale-[1.02] hover:outline-[#5389cf] hover:outline hover:outline-2"
+										key={index}>
+										<Link href={item.url}>
+											<Image
+												src={item.image}
+												alt={item.name}
+												width={350}
+												height={200}
+												className="p-1 rounded-lg"
+											/>
+											<div className="p-1 mt-2">
+												<h6 className="text-lg">{item.name}</h6>
+												<p>{item.description}</p>
+											</div>
+										</Link>
+									</div>
+								);
+							})}
+						</div>
+					</div>
+					<div>
+						<h2 className="text-[1.5rem] font-semibold text-start">Project</h2>
+						<div className="w-14 h-1 bg-[#5389cf] rounded-md"></div>
+						<div className="flex justify-between text-sm py-5">
+							<p>This is my project</p>
+							<Link href={"/project"} className="text-[#5389cf]">
+								More About My Project
+							</Link>
+						</div>
+						<div className="grid grid-cols-3 gap-4">
 							{projects.map((item, index) => {
 								return (
 									<div

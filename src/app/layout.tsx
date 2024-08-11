@@ -17,7 +17,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<main className="relative flex flex-col max-w-screen-2xl mx-auto pt-[72px] min-h-screen overflow-y-hidden">
+				<main className="relative flex flex-col max-w-screen-2xl mx-auto pt-[72px] min-h-screen">
 					{children}
 				</main>
 			</body>
