@@ -1,28 +1,127 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
-import { Profile, ProfileInfo, ProfileSocialMedia } from "./partials/profile";
-import Divider from "../divider/divider-line";
 
-export default function Navbar() {
+import { navigationLinks } from "@/lib/common/navigation";
+import { FiArrowUpRight } from "react-icons/fi";
+
+import manImage from "@/public/assets/man.png";
+import TypingAnimation from "../magicui/typing-animation";
+import { cn } from "@/lib/utils";
+import Particles from "../magicui/particles";
+
+export function NavbarHeader() {
+	const [color, setColor] = useState("#ffffff");
+
+	// useEffect(() => {
+	// 	setColor(theme === "dark" ? "#ffffff" : "#000000");
+	// }, [theme]);
 	return (
-		<main className="bg-[#2d2e30]/50 rounded-2xl h-auto p-3 hidden lg:block">
-			<div className="flex flex-col justify-center items-center gap-3 pt-6">
-				<Image
-					src="/img/profil.jpg"
-					alt="logo"
-					width={150}
-					height={100}
-					className="rounded-xl"
-				/>
-				<Profile />
-			</div>
-			<div className="px-6">
-				<Divider />
-			</div>
-			<div className="">
-				<ProfileInfo />
-				<ProfileSocialMedia />
-			</div>
-		</main>
+		<section className="w-full py-10 px-10 bg-[#5389cf] rounded-xl lg:h-[900px]">
+			<nav className="flex justify-between items-center">
+				<div>
+					<p className="text-white text-lg font-semibold">Dhidd</p>
+				</div>
+				<div className="hidden md:flex gap-6 ">
+					{navigationLinks.map((item, index) => {
+						return (
+							<Link
+								key={index}
+								href={item.href}
+								className="text-white hover:text-[#b9cfec]">
+								<p>{item.name}</p>
+							</Link>
+						);
+					})}
+				</div>
+				<div className="bg-white px-5 py-2 rounded-full">
+					<button>
+						<Link href={"/"} className={cn(`flex items-center gap-2`)}>
+							Start Project
+							<FiArrowUpRight />
+						</Link>
+					</button>
+				</div>
+			</nav>
+			<main className="flex flex-col-reverse lg:flex-row pt-7 items-center gap-6">
+				<div className="text-white">
+					<TypingAnimation text="Hello Everyone !" className="text-start" />
+					<h2>I&apos;m Dhidd, Fullstack Developer and Frontend Developer </h2>
+				</div>
+				<div className="relative flex justify-center items-center py-5 w-full cursor-pointer">
+					<Image src={manImage} alt="header-image" width={300} height={200} />
+					<Particles
+						className="absolute inset-0"
+						quantity={100}
+						ease={100}
+						color={color}
+						refresh
+					/>
+				</div>
+			</main>
+		</section>
+	);
+}
+
+export function Navbar() {
+	const [showNavbar, setShowNavbar] = useState(false);
+
+	useEffect(() => {
+		const showingNavbarLocal = localStorage.getItem("showNavbar");
+		if (showingNavbarLocal) {
+			setShowNavbar(JSON.parse(showingNavbarLocal));
+		}
+
+		const handleScroll = () => {
+			const sectionElement = document.querySelector("section");
+			const scrollPosition = window.scrollY;
+			if (sectionElement) {
+				const headerHeight = sectionElement.offsetHeight;
+				if (scrollPosition > headerHeight) {
+					setShowNavbar(true);
+					localStorage.setItem("showNavbar", "" + true);
+				} else {
+					setShowNavbar(false);
+					localStorage.setItem("showNavbar", "" + false);
+				}
+			}
+		};
+
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+	return (
+		<section
+			className={`bg-white py-4 px-10 fixed top-0 w-full z-50 ${
+				showNavbar ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+			}`}>
+			<nav className="flex justify-between items-center">
+				<div>
+					<p className="text-blue-500 text-lg font-semibold">Dhidd</p>
+				</div>
+				<div className="hidden md:flex gap-6 ">
+					{navigationLinks.map((item, index) => {
+						return (
+							<Link
+								key={index}
+								href={item.href}
+								className="text-blue-500 hover:text-[#a6b6cc]">
+								<p>{item.name}</p>
+							</Link>
+						);
+					})}
+				</div>
+				<div className="bg-[#5389cf] px-5 py-2 rounded-full">
+					<button className="flex items-center gap-2 text-white ">
+						Start Project
+						<FiArrowUpRight />
+					</button>
+				</div>
+			</nav>
+		</section>
 	);
 }
