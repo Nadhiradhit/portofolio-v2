@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import { navigationLinks } from "@/lib/common/navigation";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -13,10 +14,12 @@ import Particles from "../magicui/particles";
 
 export function NavbarHeader() {
 	const [color, setColor] = useState("#ffffff");
-
+	// const router = useRouter();
+	// const pathname = usePathname();
 	// useEffect(() => {
 	// 	setColor(theme === "dark" ? "#ffffff" : "#000000");
 	// }, [theme]);
+
 	return (
 		<section className="w-full py-10 px-10 bg-[#5389cf] rounded-xl lg:h-[900px]">
 			<nav className="flex justify-between items-center">
@@ -29,6 +32,7 @@ export function NavbarHeader() {
 							<Link
 								key={index}
 								href={item.href}
+								scroll={false}
 								className="text-white hover:text-[#b9cfec]">
 								<p>{item.name}</p>
 							</Link>
@@ -66,6 +70,7 @@ export function NavbarHeader() {
 
 export function Navbar() {
 	const [showNavbar, setShowNavbar] = useState(false);
+	const router = useRouter();
 
 	useEffect(() => {
 		const showingNavbarLocal = localStorage.getItem("showNavbar");
@@ -94,6 +99,10 @@ export function Navbar() {
 			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
+	const handleLinkClick = (href: string) => {
+		router.push(href);
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
 	return (
 		<section
 			className={`bg-white py-4 px-10 fixed top-0 w-full z-50 ${
@@ -109,6 +118,7 @@ export function Navbar() {
 							<Link
 								key={index}
 								href={item.href}
+								onClick={() => handleLinkClick(item.href)}
 								className="text-blue-500 hover:text-[#a6b6cc]">
 								<p>{item.name}</p>
 							</Link>
