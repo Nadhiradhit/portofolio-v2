@@ -21,6 +21,7 @@ export default function RootLayout({
 				<div className="p-5 mx-auto z-30">
 					<NavbarHeader />
 				</div>
+
 				<Navbar />
 				<main className="relative flex flex-col max-w-screen-2xl mx-auto pt-[72px] min-h-screen">
 					{children}
