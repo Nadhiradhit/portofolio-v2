@@ -13,12 +13,7 @@ import { cn } from "@/lib/utils";
 import Particles from "../magicui/particles";
 
 export function NavbarHeader() {
-	const [color, setColor] = useState("#ffffff");
-	// const router = useRouter();
-	// const pathname = usePathname();
-	// useEffect(() => {
-	// 	setColor(theme === "dark" ? "#ffffff" : "#000000");
-	// }, [theme]);
+	const [color] = useState("#ffffff");
 
 	return (
 		<section className="w-full py-10 px-10 bg-[#5389cf] rounded-xl lg:h-[900px]">
@@ -110,7 +105,7 @@ export function Navbar() {
 			}`}>
 			<nav className="flex justify-between items-center">
 				<div>
-					<p className="text-blue-500 text-lg font-semibold">Dhidd</p>
+					<p className="text-[#5389cf] text-lg font-semibold">Dhidd</p>
 				</div>
 				<div className="hidden md:flex gap-6 ">
 					{navigationLinks.map((item, index) => {
@@ -119,7 +114,7 @@ export function Navbar() {
 								key={index}
 								href={item.href}
 								onClick={() => handleLinkClick(item.href)}
-								className="text-blue-500 hover:text-[#a6b6cc]">
+								className="text-[#5389cf] hover:text-[#a6b6cc]">
 								<p>{item.name}</p>
 							</Link>
 						);
