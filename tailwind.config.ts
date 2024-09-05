@@ -18,6 +18,9 @@ const config = {
 			},
 		},
 		extend: {
+			fontFamily: {
+				sans: "--font-plus-jakarta-sans",
+			},
 			animation: {
 				marquee: "marquee var(--duration) linear infinite",
 				"marquee-vertical": "marquee-vertical var(--duration) linear infinite",
