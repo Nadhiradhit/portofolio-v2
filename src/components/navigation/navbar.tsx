@@ -11,12 +11,17 @@ import manImage from "@/public/assets/man.png";
 import TypingAnimation from "../magicui/typing-animation";
 import { cn } from "@/lib/utils";
 import Particles from "../magicui/particles";
+import { IconButton } from "../button/button";
 
 export function NavbarHeader() {
 	const [color] = useState("#ffffff");
 
 	return (
-		<section className="w-full py-10 px-10 bg-[#5389cf] rounded-xl lg:h-[900px]">
+		<section
+			className={cn(
+				`w-full py-10 px-10 bg-[#9fafc4] rounded-xl lg:h-[900px]`,
+				`w-full py-10 px-10 bg-[#5389cf] rounded-xl lg:h-[900px]`
+			)}>
 			<nav className="flex justify-between items-center">
 				<div>
 					<p className="text-white text-lg font-semibold">Dhidd</p>
@@ -34,14 +39,12 @@ export function NavbarHeader() {
 						);
 					})}
 				</div>
-				<div className="bg-white px-5 py-2 rounded-full">
-					<button>
-						<Link href={"/"} className={cn(`flex items-center gap-2`)}>
-							Start Project
-							<FiArrowUpRight />
-						</Link>
-					</button>
-				</div>
+				<IconButton
+					icon={<FiArrowUpRight size={24} />}
+					text="Start Project"
+					href="/"
+					className="bg-white px-5 py-2 rounded-full"
+				/>
 			</nav>
 			<main className="flex flex-col-reverse lg:flex-row pt-7 items-center gap-6">
 				<div className="text-white">
@@ -120,12 +123,12 @@ export function Navbar() {
 						);
 					})}
 				</div>
-				<div className="bg-[#5389cf] px-5 py-2 rounded-full">
-					<button className="flex items-center gap-2 text-white ">
-						Start Project
-						<FiArrowUpRight />
-					</button>
-				</div>
+				<IconButton
+					icon={<FiArrowUpRight size={24} />}
+					text="Start Project"
+					href="/"
+					className="bg-[#5389cf] text-white px-5 py-2 rounded-full"
+				/>
 			</nav>
 		</section>
 	);
