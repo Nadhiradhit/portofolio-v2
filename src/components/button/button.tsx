@@ -13,7 +13,7 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
 }
 
 interface IconButtonProps extends ButtonProps {
-	icon: React.ReactNode;
+	icon?: React.ReactNode;
 }
 
 export function Button({
@@ -73,9 +73,12 @@ export function IconButton({
 				},
 				className
 			)}>
-			<Link href={href} target={target} className="flex items-center gap-2">
-				{icon}
+			<Link
+				href={href}
+				target={target}
+				className="flex items-center justify-center gap-2">
 				<p className="hidden md:block">{text}</p>
+				<p className="">{icon}</p>
 			</Link>
 		</button>
 	);

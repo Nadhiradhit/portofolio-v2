@@ -8,7 +8,8 @@ import {
 	CardDescription,
 	CardFooter,
 } from "@/components/card/card";
-import { Button } from "@/components/button/button";
+import { Button, IconButton } from "@/components/button/button";
+import { FiAlignJustify } from "react-icons/fi";
 
 export default function ProjectSections() {
 	const haveMoreProjects = projects.length > 4;
@@ -16,12 +17,15 @@ export default function ProjectSections() {
 	return (
 		<section className="px-10 py-10 w-full">
 			<main className=" bg-[#D0E8F4] rounded-xl px-5 py-2">
-				<div className="py-6 flex justify-between">
+				<div className="py-6 flex justify-between items-center">
 					<h3 className="text-[#0F88BC] font-semibold">My Projects</h3>
 					{haveMoreProjects && (
-						<button className="w-56 h-10 border border-blue-300 rounded-full hover:scale-105 hover:bg-[#edf5ff] transition transform ease-in-out">
-							View More Projects
-						</button>
+						<IconButton
+							text="View More Project"
+							href="/projects"
+							icon={<FiAlignJustify size={24} />}
+							typeButton="primary"
+						/>
 					)}
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:flex  gap-4 pb-6 ">

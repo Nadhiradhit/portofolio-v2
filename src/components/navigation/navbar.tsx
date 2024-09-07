@@ -43,7 +43,7 @@ export function NavbarHeader() {
 					icon={<FiArrowUpRight size={24} />}
 					text="Start Project"
 					href="/"
-					className="bg-white px-5 py-2 rounded-full"
+					typeButton="primary"
 				/>
 			</nav>
 			<main className="flex flex-col-reverse lg:flex-row pt-7 items-center gap-6">
@@ -127,7 +127,7 @@ export function Navbar() {
 					icon={<FiArrowUpRight size={24} />}
 					text="Start Project"
 					href="/"
-					className="bg-[#5389cf] text-white px-5 py-2 rounded-full"
+					typeButton="primary"
 				/>
 			</nav>
 		</section>
