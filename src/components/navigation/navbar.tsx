@@ -103,7 +103,7 @@ export function Navbar() {
 	};
 	return (
 		<section
-			className={`bg-white py-4 px-10 fixed top-0 w-full z-50 ${
+			className={`bg-[#fafafa] py-4 px-10 fixed top-0 w-full z-50 ${
 				showNavbar ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
 			}`}>
 			<nav className="flex justify-between items-center">

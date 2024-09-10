@@ -14,7 +14,7 @@ const projects = [
 	{
 		name: "Portofolio Website",
 		description:
-			"Web-base an application as a portofolio website that's include an experince skill.",
+			"Web-base an application as a portofolio website that's include an experince skill. This made a version 1.0",
 		image: PersonalImage,
 		url: "https://porto-nadhir.vercel.app/",
 		language: [

@@ -12,13 +12,13 @@ import { Button, IconButton } from "@/components/button/button";
 import { FiAlignJustify } from "react-icons/fi";
 
 export default function ProjectSections() {
-	const haveMoreProjects = projects.length > 4;
-	const maxProjects = projects.slice(0, 4);
+	const haveMoreProjects = projects.length > 3;
+	const maxProjects = projects.slice(0, 3);
 	return (
 		<section className="px-10 py-10 w-full">
 			<main className=" bg-[#D0E8F4] rounded-xl px-5 py-2">
 				<div className="py-6 flex justify-between items-center">
-					<h3 className="text-[#0F88BC] font-semibold">My Projects</h3>
+					<h3 className="text-[#0F88BC] font-semibold">Featured Projects</h3>
 					{haveMoreProjects && (
 						<IconButton
 							text="View More Project"
@@ -28,7 +28,7 @@ export default function ProjectSections() {
 						/>
 					)}
 				</div>
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:flex  gap-4 pb-6 ">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-wrap gap-4 pb-6 ">
 					{maxProjects.map((project, index) => {
 						return (
 							<Card key={index}>
