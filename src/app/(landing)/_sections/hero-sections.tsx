@@ -1,68 +1,10 @@
 "use client";
 import React from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-import MarqueeSlider from "@/components/elements/marquee";
-
 import { PiArrowElbowDownRight } from "react-icons/pi";
-import { IoLogoFirebase, IoLogoJavascript } from "react-icons/io5";
-import {
-	FaBootstrap,
-	FaGithub,
-	FaLaravel,
-	FaLinkedin,
-	FaNodeJs,
-	FaReact,
-	FaSass,
-} from "react-icons/fa";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiTypescript } from "react-icons/si";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Button, IconButton } from "@/components/button/button";
-import { cn } from "@/lib/utils";
-
-const SkillsIcon = [
-	{
-		name: "JavaScript",
-		icons: IoLogoJavascript,
-	},
-	{
-		name: "TypeScript",
-		icons: SiTypescript,
-	},
-	{
-		name: "Node.js",
-		icons: FaNodeJs,
-	},
-	{
-		name: "Sass",
-		icons: FaSass,
-	},
-	{
-		name: "Tailwind",
-		icons: RiTailwindCssFill,
-	},
-	{
-		name: "Bootstrap",
-		icons: FaBootstrap,
-	},
-	{
-		name: "Laravel",
-		icons: FaLaravel,
-	},
-	{
-		name: "React.js",
-		icons: FaReact,
-	},
-	{
-		name: "Next.js",
-		icons: RiNextjsFill,
-	},
-	{
-		name: "firebase",
-		icons: IoLogoFirebase,
-	},
-];
 
 export default function HeroSections() {
 	const router = useRouter();
@@ -71,7 +13,7 @@ export default function HeroSections() {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 	return (
-		<section className="px-10 w-full h-72 flex items-center ">
+		<section className="px-10 w-full flex items-center ">
 			<article>
 				<div className="flex items-center gap-2 text-blue-400">
 					<PiArrowElbowDownRight size={40} />
@@ -103,24 +45,8 @@ export default function HeroSections() {
 						text="Github"
 						typeButton="primary"
 					/>
-					<div className="flex gap-4 "></div>
 				</div>
 			</article>
-			{/* <div className="py-10">
-				<MarqueeSlider direction="left" speed={65} pauseOnHover={false}>
-					{SkillsIcon.map((item, index) => {
-						const IconType = item.icons;
-						return (
-							<div key={index}>
-								<div className="flex items-center gap-4 mr-7 rounded-full py-2 px-5 border border-border">
-									<p className="text-lg">{item.name}</p>
-									<IconType size={40} className="text-[#5389cf]" />
-								</div>
-							</div>
-						);
-					})}
-				</MarqueeSlider>
-			</div> */}
 		</section>
 	);
 }
