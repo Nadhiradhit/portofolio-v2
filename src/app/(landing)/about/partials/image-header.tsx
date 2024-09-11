@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
+import { VelocityScroll } from "@/components/elements/scroll-based-velocity";
 
 export default function ImageHeader() {
 	return (

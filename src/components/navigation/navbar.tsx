@@ -8,9 +8,9 @@ import { navigationLinks } from "@/lib/common/navigation";
 import { FiArrowUpRight } from "react-icons/fi";
 
 import manImage from "@/public/assets/man.png";
-import TypingAnimation from "../magicui/typing-animation";
+import TypingAnimation from "../elements/typing-animation";
 import { cn } from "@/lib/utils";
-import Particles from "../magicui/particles";
+import Particles from "../elements/particles";
 import { IconButton } from "../button/button";
 
 export function NavbarHeader() {
