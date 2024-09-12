@@ -5,7 +5,7 @@ import { VelocityScroll } from "@/components/elements/scroll-based-velocity";
 export default function ImageHeader() {
 	return (
 		<section className="w-full flex justify-center items-center">
-			<div className="absolute w-full h-full top-64">
+			<div className="absolute w-full top-64">
 				<VelocityScroll
 					text="Frontend Developer"
 					default_velocity={2}
