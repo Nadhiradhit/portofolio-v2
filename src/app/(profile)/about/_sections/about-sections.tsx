@@ -1,12 +1,16 @@
+"use client";
 import React from "react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 import ImageHeader from "../partials/image-header";
 export default function AboutSection() {
+	const [showMoreParagraph, setShowMoreParagraph] = useState(false);
+
 	return (
-		<section className="px-10">
+		<section className="px-10 ">
 			<ImageHeader />
-			<div className="pt-16 justify-center items-center">
+			<div className="pt-16 justify-center items-center ">
 				<h2 className={cn("font-bold")}>About Me</h2>
 				<article className="pt-4 ">
 					<p>
