@@ -14,7 +14,7 @@ export default function HeroSections() {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 	return (
-		<section className="px-10 w-full ">
+		<section className="px-10 w-full">
 			<ImageHeader />
 			<article>
 				<div className="flex items-center gap-2 text-blue-400">

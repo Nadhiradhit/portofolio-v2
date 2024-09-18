@@ -73,6 +73,19 @@ export default function SkillSection() {
 						);
 					})}
 				</MarqueeSlider>
+				<MarqueeSlider direction="right" speed={65} pauseOnHover={false}>
+					{SkillsIcon.map((item, index) => {
+						const IconType = item.icons;
+						return (
+							<div key={index}>
+								<div className="flex items-center gap-4 mr-7 rounded-full py-2 px-5 border border-border">
+									<p className="text-lg">{item.name}</p>
+									<IconType size={40} className="text-[#5389cf]" />
+								</div>
+							</div>
+						);
+					})}
+				</MarqueeSlider>
 			</div>
 		</section>
 	);

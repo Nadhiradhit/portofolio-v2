@@ -8,7 +8,7 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
 	className?: string;
 	target?: HTMLAttributeAnchorTarget | undefined;
 	href: string;
-	text: string;
+	text?: string;
 	typeButton?: "primary" | "secondary" | "submit" | "reset";
 }
 
