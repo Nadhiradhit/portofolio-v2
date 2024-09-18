@@ -12,11 +12,11 @@ import NavbarLinks from "./nav-link";
 export function Navbar() {
 	return (
 		<section className={cn(`w-full bg-[#fafafa] fixed top-0 z-20`)}>
-			<nav className="flex justify-between items-center h-20 mx-auto">
+			<nav className="flex justify-between items-center h-20 mx-auto px-8">
 				<Link href={"/"} className="text-3xl font-bold text-[#5389cf]">
 					Dhidd
 				</Link>
-				<div className="hidden md:flex gap-6">
+				<div className="hidden md:flex gap-6 ">
 					<NavbarLinks />
 				</div>
 				<IconButton
