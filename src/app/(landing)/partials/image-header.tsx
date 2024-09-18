@@ -6,11 +6,11 @@ import { VelocityScroll } from "@/components/elements/scroll-based-velocity";
 
 export default function ImageHeader() {
 	return (
-		<section className="w-full lg:min-h-screen  translate-y-[-10%] lg:translate-y-[-5%]">
+		<section className="w-full lg:min-h-screen translate-y-[-10%] lg:translate-y-[5%]">
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
-				className="bg-red-50 h-[500px] flex justify-center items-center relative">
+				className="h-[500px] flex justify-center items-center relative">
 				<div className="absolute flex items-center justify-center w-24 text-center">
 					<h1 className="font-bold leading-[7rem] lg:leading-normal text-[3.5rem] lg:text-[8rem] uppercase">
 						Nadhir Adhitya Zhalifunnas
