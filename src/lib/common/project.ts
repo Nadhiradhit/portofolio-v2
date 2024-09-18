@@ -12,6 +12,27 @@ import { IoLogoJavascript } from "react-icons/io5";
 
 const projects = [
 	{
+		name: "Pilih Jurusan Website",
+		description:
+			"Pilih Jurusan is a career guidance consultation services consisting in workshops, psychological test, and coaching.",
+		image: paperImage,
+		url: "https://pilihjurusan.id/",
+		language: [
+			{
+				name: "Next.js",
+				icon: RiNextjsLine,
+			},
+			{
+				name: "Tailwind",
+				icon: RiTailwindCssLine,
+			},
+			{
+				name: "TypeScript",
+				icon: SiTypescript,
+			},
+		],
+	},
+	{
 		name: "Portofolio Website",
 		description:
 			"Web-base an application as a portofolio website that's include an experince skill. This made a version 1.0",
@@ -111,13 +132,6 @@ const projects = [
 			},
 		],
 	},
-	// {
-	// 	name: "Pilih",
-	// 	description:
-	// 		"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, quibusdam omnis! Error, blanditiis deleniti, unde laboriosam ex quas, vitae soluta dolore eos minima porro dolor neque reprehenderit ea omnis necessitatibus.",
-	// 	image: paperImage,
-	// 	url: "https://porto-nadhir.vercel.app/",
-	// },
 ];
 
 export { projects };

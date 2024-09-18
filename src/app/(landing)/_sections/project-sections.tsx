@@ -38,7 +38,7 @@ export default function ProjectSections() {
 										alt={project.name}
 										width={500}
 										height={300}
-										className="rounded-t-xl cursor-pointer hover:scale-90 hover:rounded-lg transition transform ease-in-out "
+										className="rounded-t-xl cursor-pointer h-56 hover:scale-90 hover:rounded-lg transition transform ease-in-out "
 									/>
 								</CardImage>
 								<CardTitle className="text-[#0F88BC]">{project.name}</CardTitle>
