@@ -8,10 +8,6 @@ const navigationLinks = [
 		href: "/about",
 	},
 	{
-		name: "Experience",
-		href: "/experience",
-	},
-	{
 		name: "Portofolio",
 		href: "/portofolio",
 	},
