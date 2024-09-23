@@ -19,6 +19,7 @@ export default function ImageHeader() {
 				<Image
 					width={300}
 					height={500}
+					quality={100}
 					src={"/img/profil.jpg"}
 					alt="image"
 					className="rounded-lg grayscale hover:grayscale-0 transition-all ease-in-out cursor-pointer hover:scale-110 w-52 lg:w-auto"

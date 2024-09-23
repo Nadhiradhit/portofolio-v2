@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { projects } from "@/lib/common/project";
@@ -10,10 +11,14 @@ import {
 } from "@/components/card/card";
 import { Button, IconButton } from "@/components/button/button";
 import { FiAlignJustify } from "react-icons/fi";
+import { useRouter } from "next/navigation";
 
 export default function ProjectSections() {
 	const haveMoreProjects = projects.length > 3;
 	const maxProjects = projects.slice(0, 3);
+
+	const router = useRouter();
+
 	return (
 		<section className="px-10 py-10 w-full">
 			<main className=" bg-[#D0E8F4] rounded-xl px-5 py-2">
@@ -36,7 +41,7 @@ export default function ProjectSections() {
 						</div>
 					)}
 				</div>
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-wrap gap-4 pb-6 ">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:flex pb-6 ">
 					{maxProjects.map((project, index) => {
 						return (
 							<Card key={index}>
@@ -46,7 +51,7 @@ export default function ProjectSections() {
 										alt={project.name}
 										width={500}
 										height={300}
-										className="rounded-t-xl cursor-pointer h-36 lg:h-56 hover:scale-90 hover:rounded-lg transition transform ease-in-out "
+										className="rounded-t-xl cursor-pointer h-44 md:h-48 lg:h-56 hover:scale-90 hover:rounded-lg transition transform ease-in-out "
 									/>
 								</CardImage>
 								<CardTitle className="text-[#0F88BC]">{project.name}</CardTitle>
@@ -55,7 +60,8 @@ export default function ProjectSections() {
 								</CardDescription>
 								<CardFooter>
 									<Button
-										href={project.url}
+										href={"/projects" + project.slug}
+										onClick={() => router.push(`/projects/${project.slug}`)}
 										text="View Project"
 										className="text-white bg-[#0F88BC] w-full rounded-md hover:bg-[#0a5e81]"
 									/>
