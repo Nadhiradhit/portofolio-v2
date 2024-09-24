@@ -9,7 +9,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
 	title: string;
-
+	date: string;
 	content: React.ReactNode;
 }
 
@@ -35,11 +35,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
 	return (
 		<div className="w-full" ref={containerRef}>
-			<div className="py-20 px-10">
-				<h2 className="text-lg md:text-4xl mb-4 text-black  max-w-4xl">
+			<div className="pt-20 lg:py-10 px-10">
+				<h2 className="text-lg md:text-4xl mb-4 text-black font-bold max-w-4xl">
 					My Experience
 				</h2>
-				<p>This is my experience timeline</p>
 			</div>
 
 			<div ref={ref} className="relative px-10 pb-20">
@@ -47,7 +46,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 					<div
 						key={index}
 						className="flex justify-start pt-10 md:pt-2 md:gap-10">
-						<div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
+						<div className="sticky flex flex-col z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
 							<div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
 								<div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
 							</div>
@@ -60,6 +59,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 							<h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
 								{item.title}
 							</h3>
+							<h6 className="text-lg font-medium text-neutral-500 mb-4">
+								{item.date}
+							</h6>
 							{item.content}{" "}
 						</div>
 					</div>
@@ -74,7 +76,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 							height: heightTransform,
 							opacity: opacityTransform,
 						}}
-						className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] rounded-full"
+						className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-green-500 via-blue-500 to-transparent from-[0%] via-[10%] rounded-full"
 					/>
 				</div>
 			</div>
