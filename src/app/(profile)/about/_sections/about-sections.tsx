@@ -10,25 +10,33 @@ export default function AboutSection() {
 		<section className="px-10 ">
 			<div className="pt-16 justify-center items-center ">
 				<h2 className={cn("font-bold")}>About Me</h2>
-				<article className="pt-4 ">
+				<h3 className="text-lg text-blue-500">Find out more about me.</h3>
+				<article className="pt-4 text-justify w-6/12">
 					<p>
-						My name Nadhir Adhitya Zhalifunnas. Im a Fullstack Developer and
-						Frontend Developer with 4 years of experience. I enjoy building
-						websites with a powerfull design, i also enjoy to design a websites.
-						Right now im focused at working in Next.js and Express.js.
+						I&apos; m a{" "}
+						<span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-800 font-bold">
+							Frontend Developer
+						</span>{" "}
+						who interested to be a{" "}
+						<span className="bg-clip-text text-transparent bg-gradient-to-l from-blue-500 to-blue-800 font-bold">
+							Full-stack Developer
+						</span>
 					</p>
-					<p>
-						Experienced with Full Stack Web Developer and Frontend Web Developer
-						, Skilled in a wide range of technologies including HTML, CSS,
-						Javascript, PHP, Laravel, Next.js, Node.js, Tailwindcss,
-						Bootstrapcss. My favorite part of programming is design website, and
-						problem-solving aspect. Who has some value to build a creative and
-						interactive Website. Able to effectively self-manage during
-						independent projects, and weel to collaborate in a team. I am always
-						looking to learn new technologies. I am currently looking for a
-						full-time position as a Full-Stack Web Developer and Front-End Web
-						Developer.
-					</p>
+					<div className="pt-4 space-y-4 leading-[1.8] md:leading-loose">
+						<p>
+							Experienced with in Frontend Devloper and Full-stack Developer
+							with strong foundation in diserve set of technologies. Procient in
+							Frontend Developer using JavaScript,React.js, Next.js, SaSS,
+							TailwindCSS. Backend expertise in Laravel, PHP with database
+							management using a MySQL.
+						</p>
+						<p>
+							I&apos;m proficient in creating a responsive website and
+							interactive website using a technologies like react.js and
+							next.js.
+						</p>
+						<p>I&apos;m always looking for new opportunities. </p>
+					</div>
 				</article>
 			</div>
 		</section>
