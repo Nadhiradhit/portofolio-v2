@@ -12,11 +12,13 @@ import { IoLogoJavascript } from "react-icons/io5";
 
 const projects = [
 	{
+		slug: "piljur-app",
 		name: "Pilih Jurusan Website",
 		description:
 			"Pilih Jurusan is a career guidance consultation services consisting in workshops, psychological test, and coaching.",
 		image: paperImage,
 		url: "https://pilihjurusan.id/",
+		github: null,
 		language: [
 			{
 				name: "Next.js",
@@ -33,11 +35,13 @@ const projects = [
 		],
 	},
 	{
+		slug: "personal-app",
 		name: "Portofolio Website",
 		description:
 			"Web-base an application as a portofolio website that's include an experince skill. This made a version 1.0",
 		image: PersonalImage,
 		url: "https://porto-nadhir.vercel.app/",
+		github: "https://github.com/Nadhiradhit/personal-website.git",
 		language: [
 			{
 				name: "Next.js",
@@ -54,11 +58,13 @@ const projects = [
 		],
 	},
 	{
+		slug: "eventify-app",
 		name: "Eventify",
 		description:
 			"Web base an application as an event management system includes catering, videography, photography, makeup and more.",
 		image: EventifyImage,
-		url: "https://github.com/kelompok-1-Gitsid/Eventify",
+		url: null,
+		github: "https://github.com/kelompok-1-Gitsid/Eventify",
 		language: [
 			{
 				name: "Laravel",
@@ -79,11 +85,13 @@ const projects = [
 		],
 	},
 	{
+		slug: "audiobook-app",
 		name: "AudioBook Polimedia",
 		description:
 			"Web base an application as an audio book management system for reading while listening to stories.",
 		image: AudioBookImage,
-		url: "https://github.com/asyarbre/audiobook-web",
+		url: null,
+		github: "https://github.com/asyarbre/audiobook-web",
 		language: [
 			{
 				name: "Laravel",
@@ -108,11 +116,13 @@ const projects = [
 		],
 	},
 	{
+		slug: "newsin-app",
 		name: "NewsIn",
 		description:
 			"Simple web base an application as a web to input the latest news with a simple CRUD system.",
 		image: NewsInImage,
-		url: "https://github.com/Nadhiradhit/newsin-app",
+		url: null,
+		github: "https://github.com/Nadhiradhit/newsin-app",
 		language: [
 			{
 				name: "Laravel",
